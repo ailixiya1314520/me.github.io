@@ -1,18 +1,62 @@
 <!DOCTYPE HTML>
 <!--
-	Phantom by HTML5 UP
+	Phantom by HTML5 UP - Tech Art Edition
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	
+	=========================================
+	          素材替换指南 (Asset Guide)
+	=========================================
+	
+	【目录结构】
+	images/
+	├── projects/       # 项目卡片缩略图 (首页网格卡片)
+	│   ├── ue5_niagara_fire.jpg
+	│   ├── godot_water_shader.jpg
+	│   └── ...
+	├── comparisons/    # 渲染对比图 (图片对比组件)
+	│   ├── npr_before.jpg
+	│   ├── npr_after.jpg
+	│   └── ...
+	├── showcase/       # 特效展示大图 (全屏展示组件)
+	│   ├── niagara_fire_demo.jpg
+	│   ├── magic_vfx_showcase.jpg
+	│   └── ...
+	├── ui/             # UI 素材 (Logo、图标等)
+	│   ├── logo.svg
+	│   └── ...
+	└── picXX.jpg       # 旧版图片 (兼容保留)
+	
+	【路径引用规则】
+	1. 所有 HTML 文件都在项目根目录，使用相对路径
+	2. 图片路径格式: images/[文件夹]/[文件名]
+	   例: <img src="images/comparisons/npr_before.jpg" />
+	3. CSS/JS 文件路径: assets/css/ 或 assets/js/
+	   例: <script src="assets/js/img-compare.js"></script>
+	
+	【命名规范】
+	- 使用小写字母和下划线: ue5_niagara_fire.jpg
+	- 按技术栈分类: godot_*, ue5_*, cplusplus_*
+	- 对比图用 _before/_after 后缀
+	
+	【详情页图片配置】
+	- 图文混排组件: images/projects/ 或 images/showcase/
+	- 图片对比组件: images/comparisons/ 下的 *_before.jpg 和 *_after.jpg
+	- 特效展示组件: images/showcase/ 下的大图
 -->
 <html>
 	<head>
-		<title>Generic - Phantom by HTML5 UP</title>
+		<title>Niagara Fire Effect - Tech Art Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+		<!-- Engine Style Dynamic Background -->
+			<canvas id="engine-bg"></canvas>
+			<div class="grid-overlay"></div>
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -22,7 +66,7 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Tech Art Studio</span>
 								</a>
 
 							<!-- Nav -->
@@ -40,21 +84,258 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<li><a href="generic.html">Niagara Effects</a></li>
+							<li><a href="generic.html">Godot Projects</a></li>
+							<li><a href="generic.html">Technical Art</a></li>
+							<li><a href="generic.html">Contact</a></li>
 						</ul>
 					</nav>
 
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Generic Page</h1>
+							<h1>Niagara Fire Effect</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<p>This project demonstrates a real-time fire and smoke particle system built with Unreal Engine Niagara. The effect includes dynamic lighting integration, wind interaction, and GPU-accelerated simulation.</p>
+
+							<h2>Render Comparison</h2>
+							<p>Drag the slider to compare the standard PBR rendering vs. the optimized NPR (Non-Photorealistic Rendering) style.</p>
+
+							<!-- ========================================= -->
+							<!-- 图片对比组件模板 - 复制这段代码来添加新对比 -->
+							<!-- ========================================= -->
+							<!-- 使用方法：替换图片路径和标签文字即可 -->
+							<!-- ========================================= -->
+							<div class="img-compare-container">
+								<div class="img-compare-wrapper">
+									<!-- 底层图片（优化前/原始渲染） -->
+									<img src="images/pic01.jpg" class="img-compare-base" alt="Before" />
+									<!-- 上层图片（优化后/NPR渲染） -->
+									<img src="images/pic02.jpg" class="img-compare-overlay" alt="After" />
+									<!-- 拖拽滑块 -->
+									<div class="img-compare-handle"></div>
+								</div>
+								<!-- 标签 -->
+								<div class="img-compare-labels">
+									<span class="img-compare-label label-before">Standard PBR</span>
+									<span class="img-compare-label label-after">Optimized NPR</span>
+								</div>
+							</div>
+							<!-- ========================================= -->
+							<!-- 图片对比组件结束 -->
+							<!-- ========================================= -->
+
+							<h2>Technical Implementation</h2>
+							<p>The particle system is built using a custom C++ module that interfaces with Niagara's data-oriented framework. Below is the core update loop for the fire simulation.</p>
+
+							<!-- ========================================= -->
+							<!-- 科技感代码块模板 - 复制这段代码来添加新代码 -->
+							<!-- ========================================= -->
+							<!-- 使用方法：替换语言名称和代码内容 -->
+							<!-- 语法高亮类： -->
+							<!-- .syntax-keyword - 关键字 -->
+							<!-- .syntax-string - 字符串 -->
+							<!-- .syntax-comment - 注释 -->
+							<!-- .syntax-function - 函数名 -->
+							<!-- .syntax-variable - 变量名 -->
+							<!-- .syntax-number - 数字 -->
+							<!-- .syntax-preprocessor - 预处理指令 -->
+							<!-- ========================================= -->
+							<div class="tech-code-block">
+								<div class="code-header">
+									<div class="code-dots">
+										<span class="dot dot-red"></span>
+										<span class="dot dot-yellow"></span>
+										<span class="dot dot-green"></span>
+									</div>
+									<div class="code-lang">C++</div>
+									<div class="code-copy">Copy</div>
+								</div>
+								<div class="code-body">
+									<div class="code-scanline"></div>
+									<div class="code-glow"></div>
+									<pre><code>
+<div class="code-line"><span class="line-number">1</span><span class="line-content"><span class="syntax-preprocessor">#include</span> <span class="syntax-string">"NiagaraFireSimulation.h"</span></span></div>
+<div class="code-line"><span class="line-number">2</span><span class="line-content"></span></div>
+<div class="code-line"><span class="line-number">3</span><span class="line-content"><span class="syntax-comment">// Fire particle update loop</span></span></div>
+<div class="code-line"><span class="line-number">4</span><span class="line-content"><span class="syntax-keyword">void</span> <span class="syntax-function">UNiagaraFireSimulation::UpdateParticles</span>(</span></div>
+<div class="code-line"><span class="line-number">5</span><span class="line-content">    <span class="syntax-keyword">float</span> DeltaTime,</span></div>
+<div class="code-line"><span class="line-number">6</span><span class="line-content">    <span class="syntax-keyword">const</span> <span class="syntax-function">FFireSimulationParams</span>& Params</span></div>
+<div class="code-line"><span class="line-number">7</span><span class="line-content">) {</span></div>
+<div class="code-line"><span class="line-number">8</span><span class="line-content">    <span class="syntax-comment">// GPU-accelerated particle update</span></span></div>
+<div class="code-line"><span class="line-number">9</span><span class="line-content">    <span class="syntax-keyword">for</span> (<span class="syntax-keyword">int32</span> i = <span class="syntax-number">0</span>; i < Particles.Num(); i++) {</span></div>
+<div class="code-line"><span class="line-number">10</span><span class="line-content">        <span class="syntax-function">FParticleData</span>& Particle = Particles[i];</span></div>
+<div class="code-line"><span class="line-number">11</span><span class="line-content"></span></div>
+<div class="code-line"><span class="line-number">12</span><span class="line-content">        <span class="syntax-comment">// Apply velocity with Perlin noise</span></span></div>
+<div class="code-line"><span class="line-number">13</span><span class="line-content">        FVector Noise = <span class="syntax-function">PerlinNoise3D</span>(</span></div>
+<div class="code-line"><span class="line-number">14</span><span class="line-content">            Particle.Position * Params.NoiseScale,</span></div>
+<div class="code-line"><span class="line-number">15</span><span class="line-content">            GetWorld()->GetTimeSeconds()</span></div>
+<div class="code-line"><span class="line-number">16</span><span class="line-content">        );</span></div>
+<div class="code-line"><span class="line-number">17</span><span class="line-content"></span></div>
+<div class="code-line"><span class="line-number">18</span><span class="line-content">        Particle.Velocity += Noise * Params.Turbulence * DeltaTime;</span></div>
+<div class="code-line"><span class="line-number">19</span><span class="line-content">        Particle.Position += Particle.Velocity * DeltaTime;</span></div>
+<div class="code-line"><span class="line-number">20</span><span class="line-content"></span></div>
+<div class="code-line"><span class="line-number">21</span><span class="line-content">        <span class="syntax-comment">// Update color based on lifetime</span></span></div>
+<div class="code-line"><span class="line-number">22</span><span class="line-content">        <span class="syntax-keyword">float</span> LifeRatio = Particle.Lifetime / Particle.MaxLifetime;</span></div>
+<div class="code-line"><span class="line-number">23</span><span class="line-content">        Particle.Color = <span class="syntax-function">FLinearColor::Lerp</span>(</span></div>
+<div class="code-line"><span class="line-number">24</span><span class="line-content">            Params.StartColor, Params.EndColor, LifeRatio</span></div>
+<div class="code-line"><span class="line-number">25</span><span class="line-content">        );</span></div>
+<div class="code-line"><span class="line-number">26</span><span class="line-content">    }</span></div>
+<div class="code-line"><span class="line-number">27</span><span class="line-content">}</span></div>
+									</code></pre>
+								</div>
+							</div>
+							<!-- ========================================= -->
+							<!-- 科技感代码块结束 -->
+							<!-- ========================================= -->
+
+							<h2>Shader Implementation</h2>
+							<p>The NPR rendering is achieved through a custom shader that modifies the lighting calculation to produce the cel-shaded look.</p>
+
+							<!-- ========================================= -->
+							<!-- 科技感代码块模板 - 示例2 -->
+							<!-- ========================================= -->
+							<div class="tech-code-block">
+								<div class="code-header">
+									<div class="code-dots">
+										<span class="dot dot-red"></span>
+										<span class="dot dot-yellow"></span>
+										<span class="dot dot-green"></span>
+									</div>
+									<div class="code-lang">HLSL</div>
+									<div class="code-copy">Copy</div>
+								</div>
+								<div class="code-body">
+									<div class="code-scanline"></div>
+									<div class="code-glow"></div>
+									<pre><code>
+<div class="code-line"><span class="line-number">1</span><span class="line-content"><span class="syntax-comment">// NPR Lighting Function</span></span></div>
+<div class="code-line"><span class="line-number">2</span><span class="line-content"><span class="syntax-function">float3</span> <span class="syntax-function">CalculateNPRLighting</span>(<span class="syntax-function">float3</span> Normal,</span></div>
+<div class="code-line"><span class="line-number">3</span><span class="line-content">    <span class="syntax-function">float3</span> LightDir, <span class="syntax-function">float3</span> ViewDir) {</span></div>
+<div class="code-line"><span class="line-number">4</span><span class="line-content"></span></div>
+<div class="code-line"><span class="line-number">5</span><span class="line-content">    <span class="syntax-comment">// Diffuse calculation with cel-shading</span></span></div>
+<div class="code-line"><span class="line-number">6</span><span class="line-content">    <span class="syntax-keyword">float</span> NdotL = <span class="syntax-function">saturate</span>(<span class="syntax-function">dot</span>(Normal, LightDir));</span></div>
+<div class="code-line"><span class="line-number">7</span><span class="line-content">    </span></div>
+<div class="code-line"><span class="line-number">8</span><span class="line-content">    <span class="syntax-comment">// Apply color banding for cel-shaded look</span></span></div>
+<div class="code-line"><span class="line-number">9</span><span class="line-content">    NdotL = <span class="syntax-function">round</span>(NdotL * <span class="syntax-number">4.0</span>) / <span class="syntax-number">4.0</span>;</span></div>
+<div class="code-line"><span class="line-number">10</span><span class="line-content">    </span></div>
+<div class="code-line"><span class="line-number">11</span><span class="line-content">    <span class="syntax-comment">// Rim lighting for stylized effect</span></span></div>
+<div class="code-line"><span class="line-number">12</span><span class="line-content">    <span class="syntax-keyword">float</span> Rim = <span class="syntax-function">pow</span>(</span></div>
+<div class="code-line"><span class="line-number">13</span><span class="line-content">        <span class="syntax-function">saturate</span>(<span class="syntax-function">dot</span>(ViewDir, <span class="syntax-function">reflect</span>(-LightDir, Normal))),</span></div>
+<div class="code-line"><span class="line-number">14</span><span class="line-content">        <span class="syntax-number">8.0</span></span></div>
+<div class="code-line"><span class="line-number">15</span><span class="line-content">    );</span></div>
+<div class="code-line"><span class="line-number">16</span><span class="line-content">    </span></div>
+<div class="code-line"><span class="line-number">17</span><span class="line-content">    <span class="syntax-keyword">return</span> NdotL * <span class="syntax-string">float3(1.0, 0.9, 0.8)</span> + Rim * <span class="syntax-string">float3(0.0, 0.8, 1.0)</span>;</span></div>
+<div class="code-line"><span class="line-number">18</span><span class="line-content">}</span></div>
+									</code></pre>
+								</div>
+							</div>
+							<!-- ========================================= -->
+							<!-- 科技感代码块结束 -->
+							<!-- ========================================= -->
+
+							<h2>Performance Optimization</h2>
+							<p>To maintain high frame rates, the system uses several optimization techniques including:</p>
+							<ul>
+								<li>GPU instancing for particle rendering</li>
+								<li>Distance-based LOD system</li>
+								<li>Burst compilation for C++ hot paths</li>
+								<li>Texture array for efficient memory access</li>
+							</ul>
+
+							<!-- 【组件：图文混排】开始 -->
+							<div class="content-image-container">
+								<div class="content-text">
+									<h3>Perlin Noise Integration</h3>
+									<p>The fire effect uses <strong>3D Perlin Noise</strong> to create natural-looking turbulence. This procedural noise is sampled at each particle's position and scaled by the turbulence parameter to add organic movement.</p>
+									<p>The noise frequency determines the level of detail in the fire's chaotic behavior, while the turbulence factor controls the overall intensity of the displacement.</p>
+									<ul>
+										<li>3D noise sampling for temporal coherence</li>
+										<li>Scalable noise frequency</li>
+										<li>Wind-adaptive turbulence</li>
+									</ul>
+								</div>
+								<div class="content-image">
+									<img src="images/pic01.jpg" alt="Perlin Noise Visualization" />
+								</div>
+							</div>
+							<!-- 【组件：图文混排】结束 -->
+
+							<!-- 【组件：代码解析】开始 -->
+							<div class="code-analysis-block">
+								<div class="tech-code-block">
+									<div class="code-header">
+										<div class="code-dots">
+											<span class="dot dot-red"></span>
+											<span class="dot dot-yellow"></span>
+											<span class="dot dot-green"></span>
+										</div>
+										<div class="code-lang">C++</div>
+										<div class="code-copy">Copy</div>
+									</div>
+									<div class="code-body">
+										<div class="code-scanline"></div>
+										<div class="code-glow"></div>
+										<pre><code>
+<div class="code-line"><span class="line-number">1</span><span class="line-content"><span class="syntax-function">void</span> <span class="syntax-function">ApplyTurbulence</span>(<span class="syntax-function">FParticleData</span>& Particle) {</span></div>
+<div class="code-line"><span class="line-number">2</span><span class="line-content">    <span class="syntax-comment">// Sample 3D Perlin noise</span></span></div>
+<div class="code-line"><span class="line-number">3</span><span class="line-content">    <span class="syntax-function">FVector</span> Noise = <span class="syntax-function">PerlinNoise3D</span>(</span></div>
+<div class="code-line"><span class="line-number">4</span><span class="line-content">        Particle.Position * NoiseScale,</span></div>
+<div class="code-line"><span class="line-number">5</span><span class="line-content">        <span class="syntax-function">GetWorld</span>()-&gt;<span class="syntax-function">GetTimeSeconds</span>()</span></div>
+<div class="code-line"><span class="line-number">6</span><span class="line-content">    );</span></div>
+<div class="code-line"><span class="line-number">7</span><span class="line-content"></span></div>
+<div class="code-line"><span class="line-number">8</span><span class="line-content">    <span class="syntax-comment">// Apply turbulence force</span></span></div>
+<div class="code-line"><span class="line-number">9</span><span class="line-content">    Particle.Velocity += Noise * Turbulence;</span></div>
+<div class="code-line"><span class="line-number">10</span><span class="line-content">}</span></div>
+										</code></pre>
+									</div>
+								</div>
+								<div class="code-explanation">
+									<div class="explanation-title">核心算法解析</div>
+									<div class="explanation-content">
+										<p>这段代码展示了如何将 Perlin 噪声应用到粒子系统中。关键在于使用 <span class="code-highlight">3D 噪声采样</span>，其中时间作为第三维度，确保噪声在不同帧之间平滑变化。</p>
+										<div class="algorithm-step">
+											<div class="step-number">1</div>
+											<div class="step-text">将粒子位置乘以 <span class="code-highlight">NoiseScale</span> 控制噪声频率</div>
+										</div>
+										<div class="algorithm-step">
+											<div class="step-number">2</div>
+											<div class="step-text">传入世界时间作为第三维度，实现时间连贯性</div>
+										</div>
+										<div class="algorithm-step">
+											<div class="step-number">3</div>
+											<div class="step-text">将噪声向量乘以 <span class="code-highlight">Turbulence</span> 系数并叠加到速度上</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 【组件：代码解析】结束 -->
+
+							<!-- 【组件：特效展示】开始 -->
+							<div class="effect-showcase">
+								<div class="showcase-glow"></div>
+								<div class="showcase-container">
+									<div class="showcase-media">
+										<img src="images/pic13.jpg" alt="Niagara Fire Effect Showcase" />
+										<div class="video-overlay">
+											<div class="play-button"></div>
+										</div>
+									</div>
+									<div class="showcase-caption">
+										<div class="caption-title">Niagara Fire System Demo</div>
+										<div class="caption-description">Real-time fire and smoke particle system with dynamic lighting, wind interaction, and procedural noise integration.</div>
+										<div class="caption-tags">
+											<span class="tag">UE5</span>
+											<span class="tag">Niagara</span>
+											<span class="tag">Particles</span>
+											<span class="tag">C++</span>
+										</div>
+									</div>
+								</div>
+								<div class="showcase-glow-bottom"></div>
+							</div>
+							<!-- 【组件：特效展示】结束 -->
+
 						</div>
 					</div>
 
@@ -94,7 +375,7 @@
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Tech Art Studio. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>
@@ -107,6 +388,9 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/engine-bg.js"></script>
+			<script src="assets/js/img-compare.js"></script>
+			<script src="assets/js/tech-code.js"></script>
 
 	</body>
 </html>

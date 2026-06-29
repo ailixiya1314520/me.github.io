@@ -1,18 +1,65 @@
 <!DOCTYPE HTML>
 <!--
-	Phantom by HTML5 UP
+	Tech Art Portfolio - Dark Tech Theme
+	Based on Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	
+	=========================================
+	          素材替换指南 (Asset Guide)
+	=========================================
+	
+	【目录结构】
+	images/
+	├── projects/       # 项目卡片缩略图 (首页网格卡片)
+	│   ├── ue5_niagara_fire.jpg
+	│   ├── godot_water_shader.jpg
+	│   └── ...
+	├── comparisons/    # 渲染对比图 (图片对比组件)
+	│   ├── npr_before.jpg
+	│   ├── npr_after.jpg
+	│   └── ...
+	├── showcase/       # 特效展示大图 (全屏展示组件)
+	│   ├── niagara_fire_demo.jpg
+	│   ├── magic_vfx_showcase.jpg
+	│   └── ...
+	├── ui/             # UI 素材 (Logo、图标等)
+	│   ├── logo.svg
+	│   └── ...
+	└── picXX.jpg       # 旧版图片 (兼容保留)
+	
+	【路径引用规则】
+	1. 所有 HTML 文件都在项目根目录，使用相对路径
+	2. 图片路径格式: images/[文件夹]/[文件名]
+	   例: <img src="images/projects/ue5_fire.jpg" />
+	3. CSS/JS 文件路径: assets/css/ 或 assets/js/
+	   例: <link rel="stylesheet" href="assets/css/main.css" />
+	
+	【命名规范】
+	- 使用小写字母和下划线: ue5_niagara_fire.jpg
+	- 按技术栈分类: godot_*, ue5_*, cplusplus_*
+	- 对比图用 _before/_after 后缀
+	
+	【新增项目流程】
+	1. 在 images/projects/ 放入项目缩略图
+	2. 在 images/showcase/ 放入展示大图
+	3. 在 images/comparisons/ 放入对比图(如有)
+	4. 在 index.html 复制卡片模板，填写路径
 -->
 <html>
 	<head>
-		<title>Phantom by HTML5 UP</title>
+		<!-- TODO: 修改网站标题 -->
+		<title>Tech Art Portfolio - Game Developer</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+		<!-- Engine Style Dynamic Background -->
+			<canvas id="engine-bg"></canvas>
+			<div class="grid-overlay"></div>
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -22,7 +69,10 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+									<!-- TODO: 修改 Logo 图片路径 -->
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span>
+									<!-- TODO: 修改 Logo 文字 -->
+									<span class="title">Tech Art Studio</span>
 								</a>
 
 							<!-- Nav -->
@@ -40,154 +90,296 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<!-- TODO: 修改导航链接和文字 -->
+							<li><a href="generic.html">Niagara Effects</a></li>
+							<li><a href="generic.html">Godot Projects</a></li>
+							<li><a href="generic.html">Technical Art</a></li>
+							<li><a href="generic.html">Contact</a></li>
 						</ul>
 					</nav>
 
-				<!-- Main -->
+				<!-- Main Content -->
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>This is Phantom, a free, fully responsive site<br />
-								template designed by <a href="http://html5up.net">HTML5 UP</a>.</h1>
-								<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+								<!-- TODO: 修改页面主标题 -->
+								<h1>Technical Artist & Game Developer<br />
+								Creating Immersive Visual Experiences</h1>
+								<!-- TODO: 修改页面副标题描述 -->
+								<p>Specializing in Niagara particle systems, real-time rendering, and shader development. Explore my portfolio of game effects and interactive projects.</p>
 							</header>
 							<section class="tiles">
+
+<!-- ============================================================================ -->
+<!--                              分类区块：UE5 引擎与底层逻辑                          -->
+<!-- ============================================================================ -->
+<!-- 此区域放置 UE5、Niagara、C++ 底层逻辑相关项目 -->
+<!-- ============================================================================ -->
+
+								<!-- UE5 - Niagara Fire Effect -->
 								<article class="style1">
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Magna</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic01.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>Niagara Fire Effect</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Real-time fire and smoke particle system built with Unreal Engine Niagara. Includes dynamic lighting and wind interaction.</p>
+											</div>
+										</a>
+									</div>
 								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Lorem</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Feugiat</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
+
+								<!-- UE5 - Volumetric Fog -->
 								<article class="style4">
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Tempus</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic04.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>Volumetric Fog</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Real-time volumetric fog system with light scattering and distance-based density.</p>
+											</div>
+										</a>
+									</div>
 								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Aliquam</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
+
+								<!-- UE5 - Destruction System -->
 								<article class="style6">
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Veroeros</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic06.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>Destruction System</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Physics-based destruction with debris particles and dynamic mesh fracture.</p>
+											</div>
+										</a>
+									</div>
 								</article>
+
+								<!-- UE5 - Character VFX -->
 								<article class="style2">
-									<span class="image">
-										<img src="images/pic07.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Ipsum</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic07.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>Character VFX</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Character abilities and status effects including dash trails, buff auras, and damage indicators.</p>
+											</div>
+										</a>
+									</div>
 								</article>
+
+<!-- ============================================================================ -->
+<!--                            分类区块：Godot 渲染与 TA 技术                         -->
+<!-- ============================================================================ -->
+<!-- 此区域放置 Godot、Shader、实时渲染、TA 工具相关项目 -->
+<!-- ============================================================================ -->
+
+								<!-- Godot - Water Shader -->
+								<article class="style2">
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic02.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>Godot Water Shader</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Procedural water shader with caustics, foam, and wave simulation in Godot Engine.</p>
+											</div>
+										</a>
+									</div>
+								</article>
+
+								<!-- TA - Magic VFX Pack -->
 								<article class="style3">
-									<span class="image">
-										<img src="images/pic08.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Dolor</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic03.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>Magic VFX Pack</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Collection of spell effects including lightning, teleportation, and elemental attacks.</p>
+											</div>
+										</a>
+									</div>
 								</article>
+
+								<!-- TA - Post-Processing Stack -->
+								<article class="style3">
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic08.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>Post-Processing Stack</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Custom post-processing effects including chromatic aberration, film grain, and bloom.</p>
+											</div>
+										</a>
+									</div>
+								</article>
+
+								<!-- TA - Terrain Shader -->
 								<article class="style1">
-									<span class="image">
-										<img src="images/pic09.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Nullam</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic09.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>Terrain Shader</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Multi-layer terrain shader with texture blending, parallax mapping, and snow accumulation.</p>
+											</div>
+										</a>
+									</div>
 								</article>
+
+<!-- ============================================================================ -->
+<!--                          分类区块：AIGC 自动化工作流                             -->
+<!-- ============================================================================ -->
+<!-- 此区域放置 AI 工具、自动化脚本、工作流优化相关项目 -->
+<!-- ============================================================================ -->
+
+								<!-- AIGC - UI Animation System -->
 								<article class="style5">
-									<span class="image">
-										<img src="images/pic10.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Ultricies</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic05.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>UI Animation System</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Custom UI animation framework with shader-based transitions and particle effects.</p>
+											</div>
+										</a>
+									</div>
 								</article>
+
+								<!-- AIGC - AI Behavior Visualization -->
+								<article class="style5">
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic10.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>AI Behavior Visualization</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Debug visualization tools for AI navigation, decision trees, and sensor ranges.</p>
+											</div>
+										</a>
+									</div>
+								</article>
+
+								<!-- AIGC - Audio Sync Effects -->
 								<article class="style6">
-									<span class="image">
-										<img src="images/pic11.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Dictum</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic11.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>Audio Sync Effects</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Visual effects synchronized with audio beats and music intensity.</p>
+											</div>
+										</a>
+									</div>
 								</article>
+
+								<!-- AIGC - Procedural Generation -->
 								<article class="style4">
-									<span class="image">
-										<img src="images/pic12.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Pretium</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
+									<div class="card-container">
+										<span class="image">
+											<!-- TODO: 填入项目图片路径 -->
+											<img src="images/pic12.jpg" alt="" />
+											<div class="card-glow"></div>
+											<div class="card-border"></div>
+										</span>
+										<!-- TODO: 填入项目详情页面链接 -->
+										<a href="generic.html">
+											<!-- TODO: 填入项目标题 -->
+											<h2>Procedural Generation</h2>
+											<div class="content">
+												<!-- TODO: 填入项目描述 -->
+												<p>Procedural level generation with VFX integration and dynamic environment creation.</p>
+											</div>
+										</a>
+									</div>
 								</article>
+
 							</section>
 						</div>
 					</div>
@@ -196,6 +388,7 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
+								<!-- TODO: 修改联系表单标题 -->
 								<h2>Get in touch</h2>
 								<form method="post" action="#">
 									<div class="fields">
@@ -215,8 +408,10 @@
 								</form>
 							</section>
 							<section>
+								<!-- TODO: 修改社交媒体标题 -->
 								<h2>Follow</h2>
 								<ul class="icons">
+									<!-- TODO: 修改社交媒体链接 -->
 									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
@@ -228,7 +423,9 @@
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<!-- TODO: 修改版权信息 -->
+								<li>&copy; Tech Art Studio. All rights reserved</li>
+								<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>
@@ -241,6 +438,39 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/engine-bg.js"></script>
+			<script src="assets/js/card-interaction.js"></script>
 
 	</body>
 </html>
+
+<!-- ============================================================================ -->
+<!--                            标准项目卡片模板（供复制使用）                          -->
+<!-- ============================================================================ -->
+<!-- 复制以下 <article> 块到对应的分类区域即可添加新项目 -->
+<!-- ============================================================================ -->
+<!-- style类可选值: style1 ~ style6，对应不同的主题色 -->
+<!-- style1: 荧光蓝 (#00f0ff) | style2: 亮橙色 (#ff6b35) -->
+<!-- style3: 青绿色 (#00d4aa) | style4: 紫色 (#8b5cf6) -->
+<!-- style5: 金黄色 (#fbbf24) | style6: 蓝色 (#3b82f6) -->
+<!-- ============================================================================ -->
+<!--
+<article class="style1">
+	<div class="card-container">
+		<span class="image">
+			<img src="images/picXX.jpg" alt="" />
+			<div class="card-glow"></div>
+			<div class="card-border"></div>
+		</span>
+		<a href="generic.html">
+			<h2>项目标题</h2>
+			<div class="content">
+				<p>项目描述...</p>
+			</div>
+		</a>
+	</div>
+</article>
+-->
+<!-- ============================================================================ -->
+<!--                              模板结束                                          -->
+<!-- ============================================================================ -->
