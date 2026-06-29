@@ -3091,6 +3091,158 @@ body::after {
   box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
 }
 
+/* ============================================
+   Experience & Awards Section (荣誉与历程模块)
+   ============================================ */
+.experience-section {
+  max-width: 900px;
+  margin: 3em auto 0;
+  padding-top: 2em;
+  border-top: 1px solid #2a2a2a;
+}
+.experience-section h2 {
+  color: #00f0ff;
+  font-size: 1.5em;
+  margin-bottom: 1.5em;
+  position: relative;
+  padding-bottom: 0.5em;
+}
+.experience-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #00f0ff;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+.experience-section h3 {
+  color: #ff6b35;
+  font-size: 1.1em;
+  margin: 1.5em 0 1em;
+  padding-left: 12px;
+  position: relative;
+}
+.experience-section h3::before {
+  content: "//";
+  position: absolute;
+  left: 0;
+  color: #00f0ff;
+  font-family: "Consolas", monospace;
+}
+.experience-section .timeline ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.experience-section .timeline ul li {
+  position: relative;
+  padding-left: 2em;
+  padding-bottom: 1.5em;
+  border-left: 2px solid #2a2a2a;
+  margin-left: 10px;
+}
+.experience-section .timeline ul li::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  background: #00f0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+.experience-section .timeline .timeline-date {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 4px;
+  font-size: 0.8em;
+  color: #00f0ff;
+  margin-right: 10px;
+  font-family: "Consolas", monospace;
+}
+.experience-section .timeline .timeline-title {
+  display: block;
+  font-weight: 600;
+  color: #e0e6ed;
+  margin-top: 0.3em;
+}
+.experience-section .timeline .timeline-desc {
+  display: block;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.3em;
+  line-height: 1.5;
+}
+.experience-section .awards .award-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1em;
+}
+.experience-section .awards .award-item {
+  background: #1A1A1A;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  padding: 1em;
+  transition: all 0.3s ease;
+}
+.experience-section .awards .award-item:hover {
+  border-color: #00f0ff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+}
+.experience-section .awards .award-level {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: 4px;
+  font-size: 0.75em;
+  color: #ff6b35;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.experience-section .awards .award-title {
+  display: block;
+  font-size: 0.9em;
+  color: #e0e6ed;
+  line-height: 1.5;
+}
+.experience-section .patents ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.experience-section .patents ul li {
+  display: flex;
+  gap: 12px;
+  padding: 1em;
+  background: #1A1A1A;
+  border-radius: 4px;
+  margin-bottom: 0.5em;
+  border-left: 3px solid #00f0ff;
+}
+.experience-section .patents .patent-icon {
+  font-size: 1.2em;
+  color: #00f0ff;
+}
+.experience-section .patents .patent-title {
+  font-weight: 600;
+  color: #e0e6ed;
+  display: block;
+  margin-bottom: 0.3em;
+}
+.experience-section .patents .patent-desc {
+  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
 /* Responsive */
 @media screen and (max-width: 980px) {
   .img-compare-container {

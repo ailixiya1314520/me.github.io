@@ -639,6 +639,185 @@
 	}
 }
 
+/* ============================================
+   Experience & Awards Section (荣誉与历程模块)
+   ============================================ */
+
+.experience-section {
+	max-width: 900px;
+	margin: 3em auto 0;
+	padding-top: 2em;
+	border-top: 1px solid _palette(border);
+
+	h2 {
+		color: _palette(accent1);
+		font-size: 1.5em;
+		margin-bottom: 1.5em;
+		position: relative;
+		padding-bottom: 0.5em;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 60px;
+			height: 3px;
+			background: _palette(accent1);
+			border-radius: 2px;
+			box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+		}
+	}
+
+	h3 {
+		color: _palette(accent2);
+		font-size: 1.1em;
+		margin: 1.5em 0 1em;
+		padding-left: 12px;
+		position: relative;
+
+		&::before {
+			content: '//';
+			position: absolute;
+			left: 0;
+			color: _palette(accent1);
+			font-family: 'Consolas', monospace;
+		}
+	}
+
+	.timeline {
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				position: relative;
+				padding-left: 2em;
+				padding-bottom: 1.5em;
+				border-left: 2px solid _palette(border);
+				margin-left: 10px;
+
+				&::before {
+					content: '';
+					position: absolute;
+					left: -5px;
+					top: 0;
+					width: 8px;
+					height: 8px;
+					background: _palette(accent1);
+					border-radius: 50%;
+					box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+				}
+			}
+		}
+
+		.timeline-date {
+			display: inline-block;
+			padding: 2px 8px;
+			background: rgba(0, 240, 255, 0.1);
+			border: 1px solid rgba(0, 240, 255, 0.2);
+			border-radius: 4px;
+			font-size: 0.8em;
+			color: _palette(accent1);
+			margin-right: 10px;
+			font-family: 'Consolas', monospace;
+		}
+
+		.timeline-title {
+			display: block;
+			font-weight: 600;
+			color: _palette(fg);
+			margin-top: 0.3em;
+		}
+
+		.timeline-desc {
+			display: block;
+			font-size: 0.9em;
+			color: rgba(255, 255, 255, 0.6);
+			margin-top: 0.3em;
+			line-height: 1.5;
+		}
+	}
+
+	.awards {
+		.award-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+			gap: 1em;
+		}
+
+		.award-item {
+			background: _palette(bg-accent);
+			border: 1px solid _palette(border);
+			border-radius: _size(border-radius);
+			padding: 1em;
+			transition: all 0.3s ease;
+
+			&:hover {
+				border-color: _palette(accent1);
+				box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+			}
+		}
+
+		.award-level {
+			display: inline-block;
+			padding: 2px 8px;
+			background: rgba(255, 107, 53, 0.1);
+			border: 1px solid rgba(255, 107, 53, 0.3);
+			border-radius: 4px;
+			font-size: 0.75em;
+			color: _palette(accent2);
+			margin-bottom: 0.5em;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+		}
+
+		.award-title {
+			display: block;
+			font-size: 0.9em;
+			color: _palette(fg);
+			line-height: 1.5;
+		}
+	}
+
+	.patents {
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				display: flex;
+				gap: 12px;
+				padding: 1em;
+				background: _palette(bg-accent);
+				border-radius: _size(border-radius);
+				margin-bottom: 0.5em;
+				border-left: 3px solid _palette(accent1);
+			}
+		}
+
+		.patent-icon {
+			font-size: 1.2em;
+			color: _palette(accent1);
+		}
+
+		.patent-title {
+			font-weight: 600;
+			color: _palette(fg);
+			display: block;
+			margin-bottom: 0.3em;
+		}
+
+		.patent-desc {
+			font-size: 0.85em;
+			color: rgba(255, 255, 255, 0.6);
+			line-height: 1.5;
+		}
+	}
+}
+
 /* Responsive */
 @include breakpoint('<=medium') {
 	.img-compare-container {
